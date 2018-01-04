@@ -57,9 +57,17 @@ app.get('/api/profile', function (req, res) {
     'github': 'jugbeep',
     'github_prof_image': 'https://avatars3.githubusercontent.com/u/26702439?s=460&v=4',
     'current_city': 'Denver',
-    'pets': [Zuchinni, Chardonnay]
+    'pets': [{name: 'Zuchinni',
+              type: 'cat',
+              breed: 'Unknown'
+              },
+              {
+              name:'Chardonnay',
+              type: 'cat',
+              breed: 'Unknown'}
+              ]}
   });
-})
+});
 
 /**********
  * SERVER *
