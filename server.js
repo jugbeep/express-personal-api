@@ -50,6 +50,13 @@ app.get('/api', function api_index(req, res) {
   })
 });
 
+app.get('/api/profile', function (req, res) {
+  res.send('this is profile endpoint');
+  res.json({
+    'something': 'else'
+  });
+})
+
 /**********
  * SERVER *
  **********/
