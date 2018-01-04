@@ -65,7 +65,7 @@ app.get('/api/profile', function (req, res) {
               name:'Chardonnay',
               type: 'cat',
               breed: 'Unknown'}
-              ]}
+              ]
   });
 });
 
