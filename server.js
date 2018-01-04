@@ -48,6 +48,7 @@ app.get('/api', function api_index(req, res) {
         "pets": "returns an array of my pets with their 'name', 'type' and 'breed'"
       }
     }
+  }
     message: "Welcome to my personal api! Here's what you need to know!",
     documentation_url: "https://github.com/example-username/express_self_api/README.md", // CHANGE ME
     base_url: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
