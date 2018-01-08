@@ -40,14 +40,15 @@ app.get('/api', function api_index(req, res) {
   res.json({
     message: "Welcome to my personal api! Here's what you need to know!",
     documentation_url: "https://github.com/example-username/express_self_api/README.md", // CHANGE ME
-    base_url: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
+    base_url: "http://afternoon-sands-49249.herokuapp.com", // CHANGE ME
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
       {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
-    ]}
-  )};
-);
+    ];
+  });
+});
+ 
 
 app.get('/api/profile', function (req, res) {
   //res.send('this is profile endpoint');
