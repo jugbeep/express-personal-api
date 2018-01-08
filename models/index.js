@@ -5,4 +5,4 @@ mongoose.connect( process.env.MONGODB_URI ||
                   process.env.MONGOHQ_URL || 
                   "mongodb://localhost/personal-api");
 
-module.exports.Campsite = require("./vacation.js");
+module.exports.Vacation = require("./vacation.js");
