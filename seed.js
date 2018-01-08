@@ -24,5 +24,5 @@ db.vacation.create(new_vacation, function(err, vacation) {
 	}
 
 	console.log('Seeded the database with: ', vacation._id)
-	process.exit();
+	process.exit(); 	
 })
