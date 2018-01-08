@@ -13,3 +13,16 @@
 //   console.log("Created new campsite", campsite._id)
 //   process.exit(); // we're all done! Exit the program.
 // })
+
+db = reqire('./models');
+
+var new_vacation = {description: "White sandy beaches, and expensive accomadations."}
+
+db.vacation.create(new_vacation, function(err, vacation) {
+	if (err){
+		return console.log("error: ", err);
+	}
+
+	console.log('Seeded the database with: ', vacation._id)
+	process.exit();
+})

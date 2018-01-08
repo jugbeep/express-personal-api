@@ -12,7 +12,7 @@ app.use(bodyParser.json());
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
 
 /**********
  * ROUTES *
@@ -39,7 +39,7 @@ app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   res.json({
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentation_url: "https://github.com/example-username/express_self_api/README.md", // CHANGE ME
+    documentation_url: "https://github.com/jugbeep/express_self_api/README.md", // CHANGE ME
     base_url: "http://afternoon-sands-49249.herokuapp.com", // CHANGE ME
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
