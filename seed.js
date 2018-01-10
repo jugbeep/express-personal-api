@@ -14,11 +14,15 @@
 //   process.exit(); // we're all done! Exit the program.
 // })
 
-db = reqire('./models');
+db = require('./models');
 
-var new_vacation = {description: "White sandy beaches, and expensive accomadations."}
+var new_vacation = [{
+	location: 'Bahamas',
+	date: '7/16/16', 
+	description: "White sandy beaches, and expensive accomadations."
+	}]
 
-db.vacation.create(new_vacation, function(err, vacation) {
+db.Vacation.create(new_vacation, function(err, vacation) {
 	if (err){
 		return console.log("error: ", err);
 	}

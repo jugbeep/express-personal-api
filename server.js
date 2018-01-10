@@ -44,7 +44,9 @@ app.get('/api', function api_index(req, res) {
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
+      {method: "GET", path: "/api/vaction", description: "all of the vacations"},
+      {method: "GET", path: "/api/vaction/:id", description: "Returns data from one of the vacations"},
+      {method: "POST", path: "/api/vaction", description: "creates a vacation idea"} // CHANGE ME
     ]
   });
 });
@@ -68,6 +70,55 @@ app.get('/api/profile', function (req, res) {
               ]
   });
 });
+
+app.get('/api/vacation', function(req, res) {
+  db.Vacation.find(function(err, results){
+    console.log(results);
+    res.json(results);
+  });
+});
+
+app.get('/api/vacation/:id', function(req, res) {
+  let foundId = req.params.id;
+  console.log(foundId);
+  db.Vacation.findById(foundId, function (err, results) {
+    console.log(results);
+    res.json(results);
+  });
+});
+
+app.post('/api/vacation', function(req, res) {
+  let incomingDat = req.body;
+  console.log(incomingDat);
+  db.Vacation.create(incomingDat);
+  res.json(incomingDat);
+});
+
+app.put('/api/vacation/:id', function(req, res) {
+  let putItem = req.params.id;
+  console.log(putItem);
+  db.Vacation.findById(putItem, function (err, result){
+    if (err) throw err;
+    console.log(result)
+    
+      result.date = req.body.date;
+      result.location = req.body.location;
+      result.description = req.body.description;
+
+    db.Vacation.create(result);
+    res.send(result);
+  });  
+});
+
+app.delete('/api/vacation/:id', function(req, res) {
+  foundId = req.params.id;
+  db.Vacation.findByIdAndRemove(foundId, function(err, doc){
+    console.log('findByIdAndRemove doc:', doc);
+    res.send('Deleted: ' + doc);
+  });
+  
+
+})
 
 /**********
  * SERVER *
